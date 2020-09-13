@@ -5,11 +5,10 @@ You must enter your username and password
 
 import requests
 from bs4 import BeautifulSoup
-
 import Growl
 import schedule
 import time
-import MoodleData
+from moodlescraper import MoodleData
 
 """Global Variables"""
 USERNAME = MoodleData.user
@@ -91,11 +90,8 @@ def get_grades(s, i, first_run):
     soup = BeautifulSoup(grade_page.text, 'html.parser')
     table = soup.find('table')
     assignments = table.tbody.find_all('a', {'class': 'gradeitemheader'})
-    grades = table.tbody.select('td.column-grade.level2')
-    if courses_ids[i] == '200383':
-        grades = grades[1:]
-    for index, item in enumerate(assignments):
-        grade = grades[index].string
+    for index, a in enumerate(assignments):
+        grade = a.parent.find_next_sibling('td', {'class': 'column-grade'}).string
         if grade == '-':
             continue
         key = (courses_titles[i], assignments[index].get_text())
@@ -111,6 +107,8 @@ def get_grades(s, i, first_run):
 # noinspection PyBroadException
 def main():
     print("Logging in to moodle as " + USERNAME)
+    session = None
+    main_page = None
     try:
         session, main_page = login()
     except:
