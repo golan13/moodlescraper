@@ -1,5 +1,0 @@
-requests
-BeautifulSoup4
-Growl
-schedule
-time

@@ -8,11 +8,10 @@ from bs4 import BeautifulSoup
 import Growl
 import schedule
 import time
-from moodlescraper import MoodleData
 
 """Global Variables"""
-USERNAME = MoodleData.user
-PASSWORD = MoodleData.password
+USERNAME = 'YOUR_USERNAME'
+PASSWORD = 'YOUR_PASSWORD'
 updated_header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) '
                                 'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'}
 idc_url = 'https://my.idc.ac.il/'

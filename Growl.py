@@ -1,7 +1,7 @@
 import gntp.notifier
-from moodlescraper import MoodleData
 
-image = open(MoodleData.icon, 'rb').read()
+
+image = open('moodlescraper/static/img/grade_icon.png', 'rb').read()
 growl = gntp.notifier.GrowlNotifier(
     applicationName="Moodle",
     notifications=["New Updates", "New Messages"],
