@@ -1,5 +1,5 @@
-.gitignore
+gitignore
 MoodleData.py
 __pycache__/
 .DS_Store
-.gitignore
+.idea/
