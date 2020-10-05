@@ -4,7 +4,7 @@
 
 This python script will check your HW grades on moodle periodically and send you a notification whenever a new grade arrives. 
 
-![](static/img/Notification.gif)
+![](static/img/Notification.mov)
 
 ## Getting Started
 
