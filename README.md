@@ -10,6 +10,7 @@ This python script will check your HW grades on moodle periodically and send you
 2. Download Growl from the Mac app store
 3. Open the Growl app -> click on Displays -> under actions choose Prowl.
 4. Under the API Keys section, choose Generate. This will generate a unique API Key we will later use.
+![](static/img/ProwlApp.png)
 5. Clone this repository and run `pip3 install -r requirements.txt` to install the dependencies.
 6. Fill in your username and password in `NotifyGrade.py`
 7. Run `NotifyGrade.py`
